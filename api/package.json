@@ -1,0 +1,55 @@
+{
+  "name": "leitor_mdb_api",
+  "version": "1.2.0",
+  "description": "api para atender as requisições para leitura dos arquivos.mdb",
+  "main": "index.js",
+  "engines": {
+    "node": "20.16"
+  },
+  "scripts": {
+    "build": "npm run build && node dist/src/index.js",
+    "start:dev": "npm run  tsc && npm run tsnd &&  node dist/index.js --watch",
+    "tsnd": "ts-node-dev --respawn src/index.ts",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "backend",
+    "frontend",
+    "node",
+    "express",
+    "typescript",
+    "angular",
+    "api",
+    "electron",
+    "mvc",
+    "adodb",
+    "xlsx",
+    "csv"
+  ],
+  "author": "Dennis J de Carvalho",
+  "license": "ISC",
+  "bugs": {},
+  "homepage": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "helmet": "^8.0.0",
+    "node-adodb": "^5.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/helmet": "^4.0.0",
+    "@types/node": "^22.9.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}
