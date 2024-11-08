@@ -9,7 +9,8 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
 -  .csv(Comma-Separated Values): Arquivos de dados no formato CSV, com valores separos por virgula.
 
 ### Endpoints <br>
-<p>Leitura de arquivo <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">.mdb</span></span></p>
+
+**Leitura de arquivo .mdb**
 
 - <p><b>Endpoint</b>: <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">/read-file/mdb</span></p> 
 - <p><b>Método</b>: <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">POST</span></p>
@@ -29,8 +30,7 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
 
 ---
 
-
-<p>Leitura de arquvo <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">.xlsx</span></span></p>
+**Leitura de arquivo .xlsx**
 
 - <p><b>Endpoint</b>: <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">/read-file/xlsx</span></p> 
 - <p><b>Método</b>: <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">POST</span></p>
@@ -51,7 +51,7 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
 
 ---
 
-  <p>Leitura de arquvo <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">.csv</span></span></p>
+**Leitura de arquvo .csv**
 
 - <p><b>Endpoint</b>: <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">/read-file/csv</span></p> 
 - <p><b>Método</b>: <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">POST</span></p>
@@ -69,7 +69,7 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
   }
   ```
 
-### Respostas e códios de status
+### Respostas e códigos de status
 - **200 OK**: a requisição foi bem sucedida e o arquivo foi processado com sucesso.
 ```json
 [
@@ -82,13 +82,13 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
 ```
 ---
 - **400 Bad Request**: 
-  - Parâmetros inválidos. Por favor, forneça o caminho do diretório e o nome dos arquivo.
+  - Parâmetros inválidos. Por favor, forneça o caminho do diretório e o nome do arquivo.
   - Parâmetros path e filename devem ser strings. 
 ---
 - **500 Internal Server Error**: 
   -  Erro interno ao processar o arquivo.
   -  Erro desconhecido.
--  
+  
 ---
 
 ### Como utilizar
@@ -102,7 +102,7 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
 
 ### Notas
 
-* A aplicaçõa utiliza as bibliotecas específicas para o processamento de cada tipo de arquivo.
+* A aplicação utiliza as bibliotecas específicas para o processamento de cada tipo de arquivo.
 * ADODB para .mdb
-* XLSX para xlsx
+* XLSX para .xlsx
 * CSV-PARSER para .csv
