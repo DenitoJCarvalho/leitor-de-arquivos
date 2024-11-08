@@ -1,7 +1,7 @@
 {
-  "name": "leitor_mdb_api",
+  "name": "leitor_de_arquivo_api",
   "version": "1.2.0",
-  "description": "api para atender as requisições para leitura dos arquivos.mdb",
+  "description": "api para atender as requisições para leitura de arquivos (.mdb, .xlsx, .csv)",
   "main": "index.js",
   "engines": {
     "node": "20.16"
