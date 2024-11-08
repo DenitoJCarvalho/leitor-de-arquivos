@@ -6,7 +6,7 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
 
 - .mdb (Microsoft Access Database): Arquivos de banco de dados Microsoft Access.
 - .xlsx(Excel): Arquivos de planilhas no formato excel.
--  .csv(Comma-Separated Values): Arquivos de dados no formato CSV, com valores separos por virgula.
+-  .csv(Comma-Separated Values): Arquivos de dados no formato CSV, com valores separados por virgula.
 
 ### Endpoints <br>
 
@@ -93,9 +93,10 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
 
 ### Como utilizar
 
-1. Informe o caminho do arquivo
-2. Informe o nome do arquivo.extensão
-3. A resposta será um json array com os dados extraídos do arquivo ou uma mensagem  de erro caso haja algum problema durante a leitura.
+1. Utilize uma ferramenta para testar os endpoints como [Insomnia](https://insomnia.rest/download) ou algum outro de sua preferência.
+2. Informe o caminho do arquivo
+3. Informe o nome do arquivo.extensão
+4. A resposta será um json array com os dados extraídos do arquivo ou uma mensagem  de erro caso haja algum problema durante a leitura.
 
 ---
 
