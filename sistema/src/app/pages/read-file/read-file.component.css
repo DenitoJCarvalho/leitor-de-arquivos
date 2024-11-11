@@ -15,16 +15,25 @@
 .content-read-file {
   grid-area: main;
 
-  & .content-filter {
-    padding: 1rem;
-  }
-
   & .mat-divider {
     margin: 1rem 0 2rem 0;
   }
 
   & .content-table {
     background-color: yellow;
+  }
+}
+
+.content-filter {
+  padding: 1rem;
+
+  & .form-filter {
+    width: 100%;
+
+    & fieldset {
+      border: none;
+      width: 100%;
+    }
   }
 }
 

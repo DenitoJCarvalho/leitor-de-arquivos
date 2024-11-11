@@ -1,11 +1,3 @@
-:is(.field-file, .field-button, .title-form) {
-  margin-bottom: 1rem;
-}
-
-:is(.field-file, .field-button) {
-  border: none;
-}
-
 .title-form {
   padding: 1rem;
   font-weight: 600;

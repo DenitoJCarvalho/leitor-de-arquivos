@@ -1,0 +1,9 @@
+<ng-container>
+
+  <mat-form-field [appearance]="'fill'">
+    <mat-label [attr.For]="'path'">{{labelInput()}}</mat-label>
+    <input matInput role="textbox" aria-labelledby="path-label path-input" [id]="'path'" [tabIndex]="tabIndex()"
+      [placeholder]="placeholder()" [(ngModel)]="value" (change)="onChange(value)" (focus)="onTouched()">
+  </mat-form-field>
+
+</ng-container>

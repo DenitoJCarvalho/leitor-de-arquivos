@@ -4,8 +4,22 @@
   </header>
 
   <main [className]="'content-read-file'" role="main" aria-labelledby="application">
+
     <section [className]="'content-filter'" role="region" aria-labelledby="filter">
-      <app-filter></app-filter>
+
+      <form [className]="'form-filter'" role="form" aria-labelledby="filter"
+        aria-describedby="file-description path-description filename-descirpiton">
+
+        <fieldset [className]="'field-path'" aria-describedby="file-description">
+          <app-input [id]="'path'" [labelInput]="'Path'"></app-input>
+        </fieldset>
+
+        <fieldset [className]="'field-filename'">
+          <app-input [id]="'filename'" [labelInput]="'Filename'"></app-input>
+        </fieldset>
+
+      </form>
+
     </section>
 
     <mat-divider role="separator" aria-hidden="true"></mat-divider>
