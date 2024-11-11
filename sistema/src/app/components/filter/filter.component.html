@@ -1,0 +1,35 @@
+<ng-container>
+  <form role="form" aria-labelledby="title-form"
+    aria-describedby="file-description path-description filename-descirpiton">
+    <h1 [className]="'title-form'" role="heading" aria-level="1">Informe o arquivo para leitura</h1>
+
+    <fieldset [className]="'field-file'" aria-describedby="file-description">
+      <label [htmlFor]="'file'" role="button">
+        Escolha o arquivo
+        <i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M9 16v-6H5l7-7l7 7h-4v6zm-4 4v-2h14v2z" />
+          </svg>
+        </i>
+      </label>
+      <br>
+      <input [type]="'file'" [name]="'file'" [id]="'file'" aria-labelledby="file-label file-description">
+    </fieldset>
+
+    <mat-form-field [appearance]="'fill'" [className]="'field-path'" aria-labelledby="path-label"
+      aria-describedby="path-description">
+      <mat-label aria-label="Path">Path</mat-label>
+      <input matInput role="textbox" aria-labelledby="path-label path-description">
+    </mat-form-field>
+
+    <mat-form-field [appearance]="'fill'" [className]="'field-path'" aria-labelledby="filename-label"
+      aria-describedby="filename-description">
+      <mat-label aria-label="File Name">File Name</mat-label>
+      <input matInput role="textbox">
+    </mat-form-field>
+
+    <fieldset [className]="'field-button'" aria-describedby="extract-description">
+      <button mat-flat-button extended role="button" aria-describedby="extract-description">Extrair</button>
+    </fieldset>
+  </form>
+  <ng-container>

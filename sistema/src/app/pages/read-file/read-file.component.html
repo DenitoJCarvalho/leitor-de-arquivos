@@ -1,0 +1,19 @@
+<div class="container">
+  <header [className]="'content-header'" role="banner" aria-label="navigation header">
+    <app-navbar></app-navbar>
+  </header>
+
+  <main [className]="'content-read-file'" role="main" aria-labelledby="application">
+    <section [className]="'content-filter'" role="region" aria-labelledby="filter">
+      <app-filter></app-filter>
+    </section>
+
+    <mat-divider role="separator" aria-hidden="true"></mat-divider>
+
+    <section [className]="'content-body-table'" role="region" aria-labelledby="data table"></section>
+
+  </main>
+
+
+  <footer role="contentinfo" aria-label="footer"></footer>
+</div>

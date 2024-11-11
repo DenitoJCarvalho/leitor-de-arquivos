@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --blue-purple: #836FFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100dvh;
+  max-width: 1600px;
+}
+
+img {
+  width: 100%;
+  max-width: 1600px;
+  height: auto;
+}
+
+/*colors*/
+.clr-blue-purple {
+  color: var(--blue-purple);
+}
+
+/*backgrounds*/
+.bg-blue-purple {
+  background-color: var(--blue-purple);
+}
