@@ -37,6 +37,10 @@
   }
 }
 
+.field-file {
+  margin-bottom: 1rem;
+}
+
 
 .content-footer {
   grid-area: footer;
@@ -66,6 +70,10 @@
       "footer footer footer"
     ;
   }
+
+  .content-filter {
+    padding: 2rem;
+  }
 }
 
 /*>= 900px*/
@@ -80,11 +88,10 @@
     ;
   }
 
-  .content-read-file {
-    & .content-filter {
-      padding: 2rem;
-    }
+  .content-filter {
+    padding: 3rem;
   }
+
 }
 
 /*>=1024px*/

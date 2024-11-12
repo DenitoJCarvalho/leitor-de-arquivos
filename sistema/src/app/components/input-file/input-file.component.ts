@@ -1,50 +1,42 @@
 import { Component, forwardRef, input, model } from '@angular/core';
-import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-input',
+  selector: 'app-input-file',
   standalone: true,
   imports: [
-    FormsModule, MatInputModule
   ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
+      useExisting: forwardRef(() => InputFileComponent),
       multi: true
     }
   ],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.css'
+  templateUrl: './input-file.component.html',
+  styleUrl: './input-file.component.css'
 })
-export class InputComponent implements ControlValueAccessor {
+export class InputFileComponent implements ControlValueAccessor {
 
   protected value = model<any>();
   protected onChange: any = (value: any) => { };
   protected onTouched: any = () => { };
   protected isDisabled: boolean = false;
 
-  autoComplete = input<string>('off');
   labelInput = input<string>();
-  placeholder = input<string>('');
   tabIndex = input<number>(0);
 
   writeValue(value: any): void {
     this.value = value;
   }
-
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
-
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
-
   setDisabledState?(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
   }
-
 
 }

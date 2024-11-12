@@ -1,0 +1,12 @@
+<ng-container>
+  <label [htmlFor]="'filename'" [className]="'label-upload'">{{labelInput()}}
+
+    <i aria-hidden="true">
+      <span class="material-symbols-outlined">
+        upload_file
+      </span>
+    </i>
+  </label>
+  <br>
+  <input [type]="'file'" [id]="'filename'" [className]="'input-file'">
+</ng-container>

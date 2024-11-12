@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+  display: flex;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.label-upload {
+  border: 1px solid rgb(0, 92, 187);
+  border-radius: 2rem;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 92, 187);
+  color: #FFFFFFFF;
+  font-weight: 500;
+
+  & i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & span {
+      overflow: hidden;
+    }
+  }
+}
