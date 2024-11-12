@@ -2,6 +2,7 @@ import express from 'express';
 import { config } from 'dotenv';
 import cors from 'cors';
 import helmet from 'helmet'
+import multer from 'multer'
 
 import { normalizePort } from './server/server';
 import { router } from './routes/route';
@@ -12,6 +13,7 @@ config({
 
 const app = express();
 const port = normalizePort(process.env.SERVER_PORT || '9753') as number;
+const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(
   cors({

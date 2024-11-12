@@ -22,6 +22,6 @@ const csv = new csvController(csvService);
 
 router.post('/read-file/mdb', mdb.readFile.bind(mdb));
 router.post('/read-file/xlsx', upload.single('file'), (req, res) => xlsx.readFile(req, res));
-router.post('/read-file/csv', csv.readFile.bind(csv));
+router.post('/read-file/csv', upload.single('file'), (req, res) => csv.readFile(req, res));
 
 export { router };

@@ -11,19 +11,17 @@ export class csvController implements ICsv {
 
   async readFile(request: Request, response: Response): Promise<any> {
     try {
-      const { path, fileName } = request.body;
       const page = parseInt(request.query.page as string) || 1;
       const pageSize = parseInt(request.query.pageSize as string) || 10;
 
-      if (!path || !fileName) {
+      if (!request.file || !request.file.buffer) {
         return response.status(400).json({
-          message: `Parâmetros inválidos. Por favor, forneça o caminho do deiretório e o nome doa arquivo.`
+          message: `Arquivo não enviado. Por favor, envie um arquivo csv.`
         });
       }
+      const data = await this.csvService.readFile(request.file.buffer, page, pageSize);
 
-      const data = await this.csvService.readFile(path, fileName, page, pageSize);
-
-      return response.status(200).json(data);
+      return response.status(200).json({ data });
 
     } catch (e) {
       console.error(e);

@@ -1,22 +1,30 @@
 import csvParser from 'csv-parser';
-import { join } from 'path';
-import { createReadStream, read } from 'fs';
+import { Readable } from 'stream';
 
 export class CsvService {
 
   constructor() { }
 
-  async readFile(path: string, filename: string, page: number, pageSize: number): Promise<any> {
+  /**
+   * Lê o contêudo de um arquivo CSV a partir de um Buffer.
+   * @param buffer - buffer do arquivo csv
+   * @param page - número de pagina desejada.
+   * @param pageSize - número de itens pro página.
+   * @returns - dados paginados do arquivos csv em formato JSON
+   */
+  async readFile(buffer: Buffer, page: number, pageSize: number): Promise<any> {
     try {
       const result: any[] = [];
-      const pathFile = join(path, filename);
-      const readFile = createReadStream(pathFile);
+      const readableStream = new Readable();
+      readableStream.push(buffer);
+      readableStream.push(null);
 
       return new Promise((resolve, reject) => {
         let currentLine = 0;
         let readLines = 0;
 
-        readFile.pipe(csvParser())
+        readableStream
+          .pipe(csvParser())
           .on('data', (data) => {
             if (currentLine >= (page - 1) * pageSize && readLines < pageSize) {
               result.push(data);
@@ -28,10 +36,9 @@ export class CsvService {
             resolve(result);
           })
           .on('error', (e) => {
-            reject(`Erro ao ler arquivo. ${e instanceof Error ? e.message : 'Erro desconhecido.'}`);
-          })
-      });
-
+            reject(`Erro ao ler arquivo. ${e instanceof Error ? e.message : 'Erro desconhecido.'}`)
+          });
+      })
     } catch (e) {
       console.error(`Erro ao ler arquivo. ${e instanceof Error ? e.message : 'Erro desconhecido.'}`);
       throw new Error(`Erro ao ler arquivo. ${e instanceof Error ? e.message : 'Erro desconhecido.'}`);
