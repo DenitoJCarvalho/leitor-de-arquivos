@@ -37,14 +37,12 @@ Esta aplicação oferece uma API para ler e processar arquivos de 3 tipos de dif
 - <p><b>Descrição</b>: Permite enviar um arquivo <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">.xlsx</span> para ser lido e processado.</p>
 -  <p><b>Resposta</b>: Retorna os dados extraídos do arquivo <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">.xlsx</span> no formato <b>JSON</b> ou uma mensagem de erro, caso a leitura falhe.</p>
 -  <p><b>Parâmetros</b>: <br>
-    -  <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">path</span>(string): caminho do diretório onde o arquivo está localizado.<br>
-    -  <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">filename</span>(string): nome do arquivo.
+    -  <span style="background-color: rgba(255,255,255,.2); padding: 1px 4px; border-radius: 4px">file</span>(buffer): arquivo a ser carregado para leitura.
   </p>  
 
   ```json
-  {
-    "path": "C:/Users/Downloads/",
-    "filename": "teste.mdb"
+  {,
+    "file": "teste.xlsx"
   }
   ```
 

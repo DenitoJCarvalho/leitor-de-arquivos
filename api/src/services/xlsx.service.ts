@@ -1,4 +1,4 @@
-import { readFile, utils } from 'xlsx';
+import { read, utils } from 'xlsx';
 import { join } from 'path'
 
 export class XlsxService {
@@ -7,20 +7,18 @@ export class XlsxService {
 
   /**
    *
-   * @param path - caminho do diretório onde o arquivo está localizado.
-   * @param filename - nome do arquivo onde o arquivo está localizado.
+   * @param file - buffer do arquivo carregado para leitura.
    * @param page - número de página desejada.
    * @param pageSize - quantidade de itens por página
    * @returns - retorna todas as planilhas do arquivo em formato JSON.
    */
-  async readFile(path: string, filename: string, page: number, pageSize: number) {
+  async readFile(file: Buffer, page: number, pageSize: number) {
 
     try {
-      const filePath = join(path, filename);
-      const workbook = readFile(filePath);
+      const workbook = read(file);
 
       if (!workbook) {
-        throw new Error(`Erro ao ler o arquivo. Por favor, verifique o caminho e o formato.`);
+        throw new Error(`Erro ao ler o arquivo. Por favor, verifique formato do arquivo.`);
       }
 
       const data: { [sheetName: string]: any } = {};

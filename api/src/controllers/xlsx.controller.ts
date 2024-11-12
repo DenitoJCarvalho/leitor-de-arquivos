@@ -2,6 +2,7 @@ import { XlsxService } from '../services/xlsx.service';
 
 import { IXlsx } from '../interfaces/IXlsx';
 import { Request, Response } from 'express';
+import multer from 'multer';
 
 export class xlsxController implements IXlsx {
 
@@ -13,17 +14,20 @@ export class xlsxController implements IXlsx {
   async readFile(request: Request, response: Response): Promise<any> {
     try {
 
-      const { path, fileName } = request.body;
-      const page = parseInt(request.query.page as string) || 1;
-      const pageSize = parseInt(request.query.pageSize as string) || 10;
+      const upload = multer();
 
-      if (!path || !fileName) {
+      if (!request.file) {
         return response.status(400).json({
-          message: `Parâmetros inválidos. Por favor, forneça o caminho do deiretório e o nome doa arquivo.`
+          message: `Arquivo não fornecido. Por favor envie um arquivo válido.`
         });
       }
 
-      const data = await this.xlsxService.readFile(path, fileName, page, pageSize);
+      const file = request.file.buffer;
+      const page = parseInt(request.query.page as string) || 1;
+      const pageSize = parseInt(request.query.pageSize as string) || 10;
+
+
+      const data = await this.xlsxService.readFile(file, page, pageSize);
 
       return response.status(200).json(data);
 
