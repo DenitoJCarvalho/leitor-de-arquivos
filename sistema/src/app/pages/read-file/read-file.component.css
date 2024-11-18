@@ -27,14 +27,11 @@
 .content-filter {
   padding: 1rem;
 
-  & .form-filter {
+  & fieldset {
+    border: none;
     width: 100%;
-
-    & fieldset {
-      border: none;
-      width: 100%;
-    }
   }
+
 }
 
 .field-file {
