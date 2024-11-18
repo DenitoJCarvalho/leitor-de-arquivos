@@ -7,30 +7,13 @@
 
     <section [className]="'content-filter'" role="region" aria-labelledby="filter">
 
-      <form [className]="'form-filter'" role="form" aria-labelledby="filter"
-        aria-describedby="file-description path-description filename-descirpiton">
+      <fieldset [className]="'field-file'" aria-describedby="file-description">
+        <app-input-file [labelInput]="'Upload'" (fileChange)="onFileSelected($event)"></app-input-file>
+      </fieldset>
 
-        <fieldset [className]="'field-file'" aria-describedby="file-description">
-          <app-input-file [labelInput]="'Upload'"></app-input-file>
-        </fieldset>
-
-        <fieldset [className]="'field-path'" aria-describedby="path-description">
-          <app-input [id]="'path'" [labelInput]="'Path'"></app-input>
-        </fieldset>
-
-        <fieldset [className]="'field-filename'" aria-describedby="filename-description">
-          <app-input [id]="'filename'" [labelInput]="'Filename'"></app-input>
-        </fieldset>
-
-        <fieldset [className]="'field-filetype'" aria-describedby="filetype-description">
-          <app-input [labelInput]="'File Type'"></app-input>
-
-        </fieldset>
-
-        <fieldset [className]="'field-button'">
-          <app-button [namebutton]="'Extrair'"></app-button>
-        </fieldset>
-      </form>
+      <fieldset [className]="'field-button'">
+        <app-button [namebutton]="'Extrair'" (click)="processFile()"></app-button>
+      </fieldset>
 
     </section>
 

@@ -10,16 +10,23 @@ export class FileReaderService {
 
   private http: HttpClient = inject(HttpClient);
 
-  private pathXlsx = `localhost:9753/read-file/xlsx`;
-  private pathCsv = `localhost:9753/read-file/csv`;
+  private pathXlsx = `http://localhost:9753/read-file/xlsx`;
+  private pathCsv = `http://localhost:9753/read-file/csv`;
 
+  private createFormData(file: File): FormData {
+    const formData = new FormData();
 
-  async readFileXlsx(path: string, fileName: string, page: number, pageSize: number): Promise<any> {
-    return this.http.post<any>(this.pathXlsx, { path, fileName, page, pageSize });
+    formData.append('file', file);
+
+    return formData;
   }
 
-  async readFileCsv(path: string, fileName: string, page: number, pageSize: number): Promise<any> {
-    return this.http.post<any>(this.pathCsv, { path, fileName, page, pageSize });
+  readFileXlsx(file: File): Observable<any> {
+    return this.http.post<any>(this.pathXlsx, this.createFormData(file));
+  }
+
+  readFileCsv(file: File): Observable<any> {
+    return this.http.post<any>(this.pathCsv, this.createFormData(file));
   }
 
 }

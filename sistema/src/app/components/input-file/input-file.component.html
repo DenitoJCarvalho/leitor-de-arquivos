@@ -8,5 +8,5 @@
     </i>
   </label>
   <br>
-  <input [type]="'file'" [id]="'filename'" [className]="'input-file'">
+  <input [type]="'file'" [id]="'filename'" [className]="'input-file'" (change)="onFileChange($event)">
 </ng-container>

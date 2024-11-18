@@ -1,4 +1,4 @@
-import { Component, forwardRef, input, model } from '@angular/core';
+import { Component, EventEmitter, forwardRef, input, model, Output, output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -26,6 +26,8 @@ export class InputFileComponent implements ControlValueAccessor {
   labelInput = input<string>();
   tabIndex = input<number>(0);
 
+  @Output() fileChange = new EventEmitter<File>();
+
   writeValue(value: any): void {
     this.value = value;
   }
@@ -37,6 +39,15 @@ export class InputFileComponent implements ControlValueAccessor {
   }
   setDisabledState?(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
+  }
+
+  onFileChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+
+    if (input?.files?.[0]) {
+      const file = input.files[0];
+      this.fileChange.emit(file);
+    }
   }
 
 }
