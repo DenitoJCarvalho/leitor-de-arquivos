@@ -14,7 +14,7 @@ import { FileReaderService } from '../../services/file-reader.service';
   standalone: true,
   imports: [
     MatDividerModule,
-    ButtonComponent, ErrorComponent, InputFileComponent, NavbarComponent, SuccessComponent
+    ButtonComponent, ErrorComponent, InputFileComponent, NavbarComponent,
   ],
   templateUrl: './read-file.component.html',
   styleUrl: './read-file.component.css'
@@ -26,7 +26,7 @@ export class ReadFileComponent {
   protected file?: File;
   protected success!: any;
   protected error!: any;
-  protected label: string = `Selecione um arquivo do tipo .xlsx ou csv`;
+  protected label: string = `Selecione um arquivo do tipo .xlsx ou .csv`;
 
 
   protected onFileSelected(file: File): void {

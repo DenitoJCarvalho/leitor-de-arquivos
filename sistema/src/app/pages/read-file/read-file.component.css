@@ -27,6 +27,15 @@
 .content-filter {
   padding: 1rem;
 
+  & div {
+    margin-bottom: 2rem;
+
+    & h4 {
+      font: 500 1rem / 1.25rem Roboto, sans-serif;
+      text-align: center;
+    }
+  }
+
   & fieldset {
     border: none;
     width: 100%;

@@ -6,6 +6,9 @@
   <main [className]="'content-read-file'" role="main" aria-labelledby="application">
 
     <section [className]="'content-filter'" role="region" aria-labelledby="filter">
+      <div>
+        <h4>{{label}}</h4>
+      </div>
 
       <fieldset [className]="'field-file'" aria-describedby="file-description">
         <app-input-file [labelInput]="'Upload'" (fileChange)="onFileSelected($event)"></app-input-file>
