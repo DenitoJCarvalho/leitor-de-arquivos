@@ -64,7 +64,6 @@ export class ReadFileComponent {
           this.fileReadService.readFileXlsx(this.file as File).subscribe({
             next: (res) => {
               console.log(res);
-              this.success = `Arquivo extraído com sucesso.`;
 
             },
             error: (e) => {

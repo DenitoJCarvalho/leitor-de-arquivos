@@ -11,6 +11,7 @@
 :root {
   --blue-purple: #836FFF;
   --red: #FF1E1E;
+  --green: #54B435;
 }
 
 * {
@@ -49,4 +50,9 @@ img {
   color: var(--red);
   font-size: smaller;
   font-weight: 500;
+}
+
+/*success*/
+.success {
+  color: var(--green);
 }
