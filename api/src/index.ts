@@ -17,9 +17,9 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(
   cors({
-    origin: '*',
+    origin: 'http://localhost:4200',
     methods: 'GET, POST, PUT, PATCH, DELETE',
-    allowedHeaders: ['Content-Type', 'Autorizathion'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     preflightContinue: false,
     optionsSuccessStatus: 204,
     credentials: true
