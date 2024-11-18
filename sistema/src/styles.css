@@ -10,6 +10,7 @@
 
 :root {
   --blue-purple: #836FFF;
+  --red: #FF1E1E;
 }
 
 * {
@@ -41,4 +42,11 @@ img {
 /*backgrounds*/
 .bg-blue-purple {
   background-color: var(--blue-purple);
+}
+
+/*errors*/
+.error {
+  color: var(--red);
+  font-size: smaller;
+  font-weight: 500;
 }

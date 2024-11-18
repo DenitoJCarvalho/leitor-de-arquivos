@@ -2,8 +2,10 @@ import { Component, inject } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { ButtonComponent } from '../../components/button/button.component';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { ErrorComponent } from '../../components/error/error.component';
 import { InputFileComponent } from '../../components/input-file/input-file.component';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { SuccessComponent } from '../../components/success/success.component';
 
 import { FileReaderService } from '../../services/file-reader.service';
 
@@ -12,7 +14,7 @@ import { FileReaderService } from '../../services/file-reader.service';
   standalone: true,
   imports: [
     MatDividerModule,
-    ButtonComponent, InputFileComponent, NavbarComponent
+    ButtonComponent, ErrorComponent, InputFileComponent, NavbarComponent, SuccessComponent
   ],
   templateUrl: './read-file.component.html',
   styleUrl: './read-file.component.css'
@@ -61,7 +63,9 @@ export class ReadFileComponent {
         case this.file?.name.endsWith('.xlsx'):
           this.fileReadService.readFileXlsx(this.file as File).subscribe({
             next: (res) => {
-              console.log(res)
+              console.log(res);
+              this.success = `Arquivo extraído com sucesso.`;
+
             },
             error: (e) => {
               console.error(e);
@@ -85,6 +89,8 @@ export class ReadFileComponent {
           break
       }
     }
+
+    setTimeout(() => this.error = null, 5000);
   }
 
 }

@@ -15,11 +15,19 @@
         <app-button [namebutton]="'Extrair'" (click)="processFile()"></app-button>
       </fieldset>
 
+      <fieldset [className]="'content-response'">
+        @if(error) {
+        <app-error [message]="error"></app-error>
+        }
+      </fieldset>
+
     </section>
 
     <mat-divider role="separator" aria-hidden="true"></mat-divider>
 
-    <section [className]="'content-body-table'" role="region" aria-labelledby="data table"></section>
+    <section [className]="'content-table'" role="region" aria-labelledby="data table">
+
+    </section>
 
   </main>
 

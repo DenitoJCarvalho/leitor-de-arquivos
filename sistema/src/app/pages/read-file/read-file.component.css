@@ -20,7 +20,7 @@
   }
 
   & .content-table {
-    background-color: yellow;
+    overflow: scroll;
   }
 }
 
@@ -38,6 +38,11 @@
   margin-bottom: 1rem;
 }
 
+.content-response {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+}
 
 .content-footer {
   grid-area: footer;
@@ -56,7 +61,7 @@
   }
 }
 
-/*>= 728px*/
+/*>= 768px*/
 @media screen and (width >=48rem) {
 
   .container {
@@ -68,9 +73,10 @@
     ;
   }
 
-  .content-filter {
+  :is(.content-filter) {
     padding: 2rem;
   }
+
 }
 
 /*>= 900px*/
@@ -85,7 +91,7 @@
     ;
   }
 
-  .content-filter {
+  :is(.content-filter) {
     padding: 3rem;
   }
 
