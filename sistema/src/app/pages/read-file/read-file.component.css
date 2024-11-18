@@ -27,7 +27,7 @@
 .content-filter {
   padding: 1rem;
 
-  & div {
+  & legend {
     margin-bottom: 2rem;
 
     & h4 {
