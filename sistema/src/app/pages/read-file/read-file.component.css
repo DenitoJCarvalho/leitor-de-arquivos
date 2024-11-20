@@ -1,4 +1,4 @@
-.container {
+.content-main {
   display: grid;
   grid-template-columns: minmax(200px, 1fr);
   grid-template-areas:
@@ -14,10 +14,6 @@
 
 .content-read-file {
   grid-area: main;
-
-  & .mat-divider {
-    margin: 1rem 0 2rem 0;
-  }
 
   & .content-table {
     overflow: scroll;
