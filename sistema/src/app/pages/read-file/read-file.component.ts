@@ -1,11 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { MatDividerModule } from '@angular/material/divider';
 
 import { ButtonComponent } from '../../components/button/button.component';
 import { ErrorComponent } from '../../components/error/error.component';
 import { InputFileComponent } from '../../components/input-file/input-file.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { SuccessComponent } from '../../components/success/success.component';
 
 import { FileReaderService } from '../../services/file-reader.service';
 
@@ -13,8 +11,7 @@ import { FileReaderService } from '../../services/file-reader.service';
   selector: 'app-read-file',
   standalone: true,
   imports: [
-    MatDividerModule,
-    ButtonComponent, ErrorComponent, InputFileComponent, NavbarComponent,
+    ButtonComponent, ErrorComponent, InputFileComponent, NavbarComponent
   ],
   templateUrl: './read-file.component.html',
   styleUrl: './read-file.component.css'
@@ -24,9 +21,11 @@ export class ReadFileComponent {
   private fileReadService: FileReaderService = inject(FileReaderService);
 
   protected file?: File;
+  protected result: any;
   protected success!: any;
   protected error!: any;
   protected label: string = `Selecione um arquivo do tipo .xlsx ou .csv`;
+  protected headers: string[] = [];
 
 
   protected onFileSelected(file: File): void {
@@ -59,34 +58,22 @@ export class ReadFileComponent {
 
   protected processFile(): void {
     if (this.validateFile()) {
-      switch (true) {
-        case this.file?.name.endsWith('.xlsx'):
-          this.fileReadService.readFileXlsx(this.file as File).subscribe({
-            next: (res) => {
-              console.log(res);
+      const fileObservable = this.file?.name.endsWith('.xlsx')
+        ? this.fileReadService.readFileXlsx(this.file as File)
+        : this.fileReadService.readFileCsv(this.file as File)
 
-            },
-            error: (e) => {
-              console.error(e);
-              this.error = e;
-            }
-          });
+      fileObservable.subscribe({
+        next: (res) => {
+          console.log(Object.keys(res.data[0]));
+          console.log(res);
+          this.headers = Object.keys(res.data[0]);
 
-          break;
-
-        case this.file?.name.endsWith('.csv'):
-          this.fileReadService.readFileCsv(this.file as File).subscribe({
-            next: (res) => {
-              console.log(res)
-            },
-            error: (e) => {
-              console.error(e);
-              this.error = e;
-            }
-          });
-
-          break
-      }
+        },
+        error: (e) => {
+          console.error(e);
+          this.error = e;
+        }
+      });
     }
 
     setTimeout(() => this.error = null, 5000);

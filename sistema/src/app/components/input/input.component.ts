@@ -1,12 +1,11 @@
 import { Component, forwardRef, input, model } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-input',
   standalone: true,
   imports: [
-    FormsModule, MatInputModule
+    FormsModule
   ],
   providers: [
     {

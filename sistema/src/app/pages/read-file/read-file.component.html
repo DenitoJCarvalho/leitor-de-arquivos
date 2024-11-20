@@ -26,10 +26,26 @@
 
     </section>
 
-    <mat-divider role="separator" aria-hidden="true"></mat-divider>
-
     <section [className]="'content-table'" role="region" aria-labelledby="data table">
+      <table>
 
+        <thead>
+          @for (column of headers; track $index) {
+          <th>{{column}}</th>
+          }
+        </thead>
+
+        <tbody>
+          @for (item of result; track $index) {
+          <tr>
+            <td>
+              {{item}}
+            </td>
+          </tr>
+          }
+        </tbody>
+
+      </table>
     </section>
 
   </main>
