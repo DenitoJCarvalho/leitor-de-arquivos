@@ -15,26 +15,16 @@ export class XlsxService {
   async readFile(file: Buffer, page: number, pageSize: number) {
 
     try {
-      const workbook = read(file);
+      const workbook = read(file, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
 
-      if (!workbook) {
-        throw new Error(`Erro ao ler o arquivo. Por favor, verifique formato do arquivo.`);
-      }
+      const jsonData = utils.sheet_to_json(sheet);
 
-      const data: { [sheetName: string]: any } = {};
+      const startIndex = (page - 1) * pageSize;
+      const paginateData = jsonData.slice(startIndex, startIndex + pageSize);
 
-      workbook.SheetNames.forEach(sheetName => {
-        const worksheet = workbook.Sheets[sheetName];
-        const dataTable = utils.sheet_to_json(worksheet);
-
-        const start = (page - 1) * pageSize;
-        const end = start + pageSize;
-        const paginated = dataTable.slice(start, end);
-
-        data[sheetName] = paginated;
-      });
-
-      return data;
+      return paginateData;
 
     } catch (e) {
       console.error(`Erro ao ler arquivo. ${e instanceof Error ? e.message : 'Erro desconhecido.'}`);
