@@ -17,7 +17,13 @@
 
   & .content-table {
     overflow: scroll;
+    padding: 1rem;
   }
+}
+
+.table>thead {
+  vertical-align: middle;
+  height: 3rem;
 }
 
 .content-filter {
