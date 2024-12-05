@@ -7,7 +7,7 @@ Este documento descreve uso do **frontend** da aplicação, que permite o upload
 1. Faça upload do arquivo<br>
    Click no botão **upload** para escolher um arquivo que seja do tipo .**xlsx** ou **.csv**
 2. Extraia os dados <br>
-   Após selecionar o arquivo, cique no botão **Extrair** para visualizar os dados carregados.
+   Após selecionar o arquivo, clique no botão **Extrair** para visualizar os dados carregados.
 
 ![image-1](/images/image_1.png)
 
