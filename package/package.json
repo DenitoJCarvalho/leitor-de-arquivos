@@ -1,0 +1,29 @@
+{
+  "name": "readfile",
+  "version": "1.0.0",
+  "description": "empacotamento para leitor de arquivos ",
+  "main": "main.js",
+  "engines": {
+    "node": "20.x.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "directory": "package",
+    "url": "git+https://github.com/DenitoJCarvalho/leitor-de-arquivos.git"
+  },
+  "keywords": [
+    "electron",
+    "node.js",
+    "javascript"
+  ],
+  "author": "Dennis J de Carvalho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenitoJCarvalho/leitor-de-arquivos/issues"
+  },
+  "homepage": "https://github.com/DenitoJCarvalho/leitor-de-arquivos#readme"
+}
