@@ -9,6 +9,11 @@
     "test": "ng test"
   },
   "private": true,
+  "repository": {
+    "type": "git",
+    "directory": "sistema",
+    "url": "https://github.com/DenitoJCarvalho/leitor-de-arquivos/tree/main/sistema"
+  },
   "dependencies": {
     "@angular/animations": "^18.2.0",
     "@angular/cdk": "^18.2.12",

@@ -14,8 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "directory": "api",
+    "url": "https://github.com/DenitoJCarvalho/leitor-de-arquivos/tree/main/sistema"
   },
+  "private": "true",
   "keywords": [
     "backend",
     "frontend",
