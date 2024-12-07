@@ -2,12 +2,17 @@
   "name": "readfile",
   "version": "1.0.0",
   "description": "empacotamento para leitor de arquivos ",
-  "main": "main.js",
   "engines": {
     "node": "20.x.x"
   },
+  "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "build:ts": "tsc -p ./electron/tsconfig.json",
+    "electron:dev": "npm run build && electron .",
+    "build:angular": "ng build --prod --output-path=sistema/dist",
+    "build:api": "tsc -p ./api/tsconfig.json",
+    "build": "npm run build:api && npm run build:angular && npm run build:ts"
   },
   "private": "true",
   "repository": {
@@ -25,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/DenitoJCarvalho/leitor-de-arquivos/issues"
   },
-  "homepage": "https://github.com/DenitoJCarvalho/leitor-de-arquivos#readme"
+  "homepage": "https://github.com/DenitoJCarvalho/leitor-de-arquivos#readme",
+  "dependencies": {
+    "electron": "^33.2.1"
+  }
 }

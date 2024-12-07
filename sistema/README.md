@@ -9,7 +9,7 @@ Este documento descreve uso do **frontend** da aplicação, que permite o upload
 2. Extraia os dados <br>
    Após selecionar o arquivo, clique no botão **Extrair** para visualizar os dados carregados.
 
-![image-1](/images/image_1.png)
+![image-1](./public/images/image_1.png)
 
 > Nota: O sistema aceita apenas arquivos que sigam o padrão abaixo.
 
@@ -30,7 +30,7 @@ Após o processamento bem-sucedido, os dados serão exibidos em uma tabela:
 
 - Se houver muitos registros, será habilitada a paginação com scroll, permitindo fácil navegação pelos dados.
 
-![image-2](/images/image_2.png)
+![image-2](./public/images/image_2.png)
 
 ## Considerações finais
 
