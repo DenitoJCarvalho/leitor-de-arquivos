@@ -8,10 +8,10 @@
   "main": "dist/main.js",
   "scripts": {
     "start": "electron .",
-    "build:ts": "tsc -p ./electron/tsconfig.json",
+    "build:ts": "tsc -p ./tsconfig.json",
     "electron:dev": "npm run build && electron .",
-    "build:angular": "ng build --prod --output-path=sistema/dist",
-    "build:api": "tsc -p ./api/tsconfig.json",
+    "build:angular": "cd .. && cd ./sistema/ && ng build",
+    "build:api": "tsc -p ../api/tsconfig.json",
     "build": "npm run build:api && npm run build:angular && npm run build:ts"
   },
   "private": "true",
