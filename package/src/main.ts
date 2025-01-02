@@ -28,7 +28,8 @@ const createWindow = () => {
   win.webContents.on('did-fail-load', (event, errorCode, errorDescription) => {
     console.error(`Erro ao carregar a página: ${errorCode} - ${errorDescription}`);
   });
-  win.webContents.openDevTools();
+
+  win.menuBarVisible = false;
 
 }
 
