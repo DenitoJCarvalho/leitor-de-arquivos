@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'read-file',
-    loadComponent: () => import('./pages/read-file/read-file.component').then(c => c.ReadFileComponent),
+    loadComponent: () => import('./read-file/read-file.component').then(c => c.ReadFileComponent),
     pathMatch: 'full',
     title: 'Leitor de arquivo'
   },

@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 
-import { ButtonComponent } from '../../components/button/button.component';
-import { ErrorComponent } from '../../components/error/error.component';
-import { InputFileComponent } from '../../components/input-file/input-file.component';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { ButtonComponent } from '../components/button/button.component';
+import { ErrorComponent } from '../components/error/error.component';
+import { InputFileComponent } from '../components/input-file/input-file.component';
+import { NavbarComponent } from '../components/navbar/navbar.component';
 
-import { FileReaderService } from '../../services/file-reader.service';
+import { FileReaderService } from './file-reader.service';
 
 @Component({
   selector: 'app-read-file',
